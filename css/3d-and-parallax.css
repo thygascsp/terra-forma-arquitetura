@@ -4,24 +4,74 @@
    Botão Vertical WhatsApp (100% Ancorado) e Tilt 3D
    ========================================================================== */
 
-/* 1. ÁRVORE TROPICAL À ESQUERDA (TALOS TOTALMENTE FORA DA TELA) */
-.left-tree-foliage {
+/* 1. COPA TROPICAL À ESQUERDA (5 GALHOS INDEPENDENTES, TALOS FORA DA TELA) */
+.left-canopy-system {
   position: fixed;
-  top: 18%;
-  left: -140px; /* Os talos ficam ocultos fora da borda esquerda da tela! */
-  width: 460px;
+  top: 0;
+  left: 0;
+  width: 480px;
   max-width: 32vw;
+  height: 100vh;
   pointer-events: none;
-  z-index: 5; /* Fica abaixo dos textos e cards para nunca atrapalhar a leitura */
-  filter: drop-shadow(15px 25px 35px rgba(0, 0, 0, 0.45));
-  will-change: transform;
-  transition: transform 0.12s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 5; /* Fica rigorosamente abaixo de todos os textos, containers e cards (z-index: 10) */
+  overflow: visible;
 }
 
-.left-tree-foliage img {
+.tree-branch {
+  position: absolute;
+  pointer-events: none;
+  transform-origin: 0% 50%; /* Articulação na base do galho fora da tela */
+  will-change: transform;
+  filter: drop-shadow(14px 20px 28px rgba(0, 0, 0, 0.42));
+  transition: opacity 0.3s ease;
+}
+
+.tree-branch img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+/* Galho 1: Topo Superior (desce com leve inclinação e escala suave) */
+.branch-top {
+  top: -4%;
+  left: -150px;
+  width: 440px;
+  z-index: 3;
+  opacity: 0.92;
+}
+
+/* Galho 2: Alto Intermediário (mais viçoso e flexível) */
+.branch-upper-mid {
+  top: 18%;
+  left: -130px;
+  width: 490px;
+  z-index: 4;
+}
+
+/* Galho 3: Centro (galho principal em destaque) */
+.branch-mid {
+  top: 40%;
+  left: -140px;
+  width: 530px;
+  z-index: 5;
+}
+
+/* Galho 4: Baixo Intermediário (camada frondosa inferior) */
+.branch-lower-mid {
+  top: 62%;
+  left: -135px;
+  width: 480px;
+  z-index: 4;
+}
+
+/* Galho 5: Base Inferior (folhas apontadas levemente para cima) */
+.branch-bottom {
+  top: 82%;
+  left: -150px;
+  width: 440px;
+  z-index: 3;
+  opacity: 0.94;
 }
 
 /* 2. BOTÃO VERTICAL DE WHATSAPP (100% ANCORADO NA BORDA DIREITA, NUNCA DESCOLA) */
@@ -286,7 +336,7 @@
   transform: translateY(-4px);
 }
 
-/* Responsividade da Vitrine de Materiais e Folhagem à Esquerda */
+/* Responsividade da Vitrine de Materiais e Copa Vegetal à Esquerda */
 @media (max-width: 991px) {
   .materials-split-layout {
     grid-template-columns: 1fr;
@@ -295,18 +345,31 @@
   .material-texture-showcase {
     min-height: 260px;
   }
-  .left-tree-foliage {
+  .left-canopy-system {
     width: 320px;
-    left: -110px;
-    opacity: 0.75;
+    max-width: 45vw;
   }
+  .tree-branch {
+    opacity: 0.8;
+  }
+  .branch-top { width: 320px; left: -110px; }
+  .branch-upper-mid { width: 340px; left: -100px; }
+  .branch-mid { width: 360px; left: -110px; }
+  .branch-lower-mid { width: 330px; left: -100px; }
+  .branch-bottom { width: 310px; left: -110px; }
 }
 
 @media (max-width: 768px) {
-  .left-tree-foliage {
+  .left-canopy-system {
     width: 220px;
-    left: -80px;
-    top: 25%;
+    max-width: 40vw;
+  }
+  .tree-branch {
     opacity: 0.65;
   }
+  .branch-top { width: 220px; left: -80px; }
+  .branch-upper-mid { width: 240px; left: -80px; }
+  .branch-mid { width: 260px; left: -85px; }
+  .branch-lower-mid { width: 230px; left: -80px; }
+  .branch-bottom { width: 210px; left: -80px; }
 }

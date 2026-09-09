@@ -6,8 +6,96 @@
 (function() {
   'use strict';
 
-  // 1. ÁRVORE TROPICAL À ESQUERDA (DESCE SUAVEMENTE COM PARALLAX LENTO)
-  const leftTree = document.querySelector('.left-tree-foliage');
+  // 1. COPA TROPICAL À ESQUERDA (5 GALHOS COM FÍSICA E PARALLAX INDEPENDENTES)
+  const branches = [
+    {
+      el: document.querySelector('.branch-top'),
+      baseRot: 18,
+      baseScale: 1.0,
+      scrollSpeed: 0.06,
+      mouseAmpX: 11,
+      mouseAmpY: 5,
+      mouseRotAmp: 2.2,
+      windAmp: 2.2,
+      windFreq1: 0.0016,
+      windFreq2: 0.0029,
+      phase: 0.0,
+      tension: 0.04,
+      damping: 0.88,
+      currX: 0, currY: 0, currRot: 18,
+      vx: 0, vy: 0, vRot: 0
+    },
+    {
+      el: document.querySelector('.branch-upper-mid'),
+      baseRot: -6,
+      baseScale: 1.02,
+      scrollSpeed: 0.16,
+      mouseAmpX: 18,
+      mouseAmpY: 9,
+      mouseRotAmp: 3.6,
+      windAmp: 3.4,
+      windFreq1: 0.0024,
+      windFreq2: 0.0041,
+      phase: 1.7,
+      tension: 0.065,
+      damping: 0.84,
+      currX: 0, currY: 0, currRot: -6,
+      vx: 0, vy: 0, vRot: 0
+    },
+    {
+      el: document.querySelector('.branch-mid'),
+      baseRot: 8,
+      baseScale: 1.06,
+      scrollSpeed: 0.11,
+      mouseAmpX: 14,
+      mouseAmpY: 7,
+      mouseRotAmp: 2.8,
+      windAmp: 2.6,
+      windFreq1: 0.0019,
+      windFreq2: 0.0034,
+      phase: 3.3,
+      tension: 0.05,
+      damping: 0.86,
+      currX: 0, currY: 0, currRot: 8,
+      vx: 0, vy: 0, vRot: 0
+    },
+    {
+      el: document.querySelector('.branch-lower-mid'),
+      baseRot: -14,
+      baseScale: 0.98,
+      scrollSpeed: 0.19,
+      mouseAmpX: 16,
+      mouseAmpY: 8,
+      mouseRotAmp: 3.2,
+      windAmp: 3.1,
+      windFreq1: 0.0027,
+      windFreq2: 0.0046,
+      phase: 4.8,
+      tension: 0.055,
+      damping: 0.85,
+      currX: 0, currY: 0, currRot: -14,
+      vx: 0, vy: 0, vRot: 0
+    },
+    {
+      el: document.querySelector('.branch-bottom'),
+      baseRot: -24,
+      baseScale: 0.95,
+      scrollSpeed: 0.08,
+      mouseAmpX: 10,
+      mouseAmpY: 5,
+      mouseRotAmp: 2.0,
+      windAmp: 1.8,
+      windFreq1: 0.0014,
+      windFreq2: 0.0026,
+      phase: 6.1,
+      tension: 0.038,
+      damping: 0.90,
+      currX: 0, currY: 0, currRot: -24,
+      vx: 0, vy: 0, vRot: 0
+    }
+  ].filter(b => b.el !== null);
+
+  const singleLeftTree = document.querySelector('.left-tree-foliage');
   const parallaxElements = document.querySelectorAll('[data-parallax-speed]');
 
   let mouseX = 0;
@@ -31,17 +119,43 @@
   }
 
   function renderParallax() {
+    const time = performance.now();
     currentX += (mouseX - currentX) * 0.05;
     currentY += (mouseY - currentY) * 0.05;
 
     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-    // Árvore à esquerda: desce de forma mais lenta e balança levemente com o vento/mouse
-    if (leftTree) {
+    // Atualização física individual para cada galho da copa
+    branches.forEach((b) => {
+      // 1. Vento orgânico perpétuo (duas harmônicas defasadas)
+      const windWave = Math.sin(time * b.windFreq1 + b.phase) * b.windAmp +
+                       Math.cos(time * b.windFreq2 + b.phase * 0.8) * (b.windAmp * 0.45);
+
+      // 2. Coordenadas alvo baseadas em scroll e interação do mouse
+      const targetX = currentX * b.mouseAmpX;
+      const targetY = (scrollY * b.scrollSpeed) + (currentY * b.mouseAmpY);
+      const targetRot = b.baseRot + windWave + (currentX * b.mouseRotAmp);
+
+      // 3. Sistema de molas (Hooke + Damping) com inércia independente
+      b.vx = (b.vx + (targetX - b.currX) * b.tension) * b.damping;
+      b.currX += b.vx;
+
+      b.vy = (b.vy + (targetY - b.currY) * b.tension) * b.damping;
+      b.currY += b.vy;
+
+      b.vRot = (b.vRot + (targetRot - b.currRot) * b.tension) * b.damping;
+      b.currRot += b.vRot;
+
+      // 4. Aplicação no estilo do elemento com aceleração por GPU
+      b.el.style.transform = `translate3d(${b.currX.toFixed(2)}px, ${b.currY.toFixed(2)}px, 0) rotate(${b.currRot.toFixed(2)}deg) scale(${b.baseScale})`;
+    });
+
+    // Compatibilidade caso exista árvore legada individual
+    if (singleLeftTree) {
       const scrollOffset = scrollY * 0.12;
       const swayX = currentX * 10;
       const swayY = currentY * 6;
-      leftTree.style.transform = `translate3d(${swayX}px, ${scrollOffset + swayY}px, 0) rotate(${currentX * 1.2}deg)`;
+      singleLeftTree.style.transform = `translate3d(${swayX}px, ${scrollOffset + swayY}px, 0) rotate(${currentX * 1.2}deg)`;
     }
 
     parallaxElements.forEach((el) => {
