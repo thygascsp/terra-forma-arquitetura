@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f2ede4"/>
+      <stop offset="70%" stop-color="#e2dbcb"/>
+      <stop offset="100%" stop-color="#cec4b1"/>
+    </linearGradient>
+    <linearGradient id="woodGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8a4b2c"/>
+      <stop offset="50%" stop-color="#aa603b"/>
+      <stop offset="100%" stop-color="#733c21"/>
+    </linearGradient>
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#82b8a8" stop-opacity="0.85"/>
+      <stop offset="50%" stop-color="#4f897b" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#1b4d41" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="600" fill="url(#skyGrad)"/>
+  
+  <path d="M0,380 Q250,330 500,360 T800,340 L800,600 L0,600 Z" fill="#6f8772" opacity="0.35"/>
+  <path d="M0,410 Q350,370 800,400 L800,600 L0,600 Z" fill="#4d6951" opacity="0.5"/>
+  
+  <rect x="0" y="450" width="800" height="150" fill="#2d4a34"/>
+  <polygon points="150,490 680,490 750,580 80,580" fill="#1c3e37" opacity="0.8"/>
+  <line x1="80" y1="535" x2="750" y2="535" stroke="#48786c" stroke-width="2" opacity="0.5"/>
+  
+  <g>
+    <rect x="180" y="240" width="220" height="240" fill="#9e4b33"/>
+    <line x1="180" y1="270" x2="400" y2="270" stroke="#4a2217" stroke-width="1.5"/>
+    <line x1="180" y1="300" x2="400" y2="300" stroke="#4a2217" stroke-width="1.5"/>
+    <line x1="180" y1="330" x2="400" y2="330" stroke="#4a2217" stroke-width="1.5"/>
+    <line x1="180" y1="360" x2="400" y2="360" stroke="#4a2217" stroke-width="1.5"/>
+    <line x1="180" y1="390" x2="400" y2="390" stroke="#4a2217" stroke-width="1.5"/>
+    <line x1="180" y1="420" x2="400" y2="420" stroke="#4a2217" stroke-width="1.5"/>
+    <line x1="180" y1="450" x2="400" y2="450" stroke="#4a2217" stroke-width="1.5"/>
+    
+    <rect x="220" y="270" width="140" height="180" fill="url(#glassGrad)" stroke="#1a2e26" stroke-width="4"/>
+    <line x1="290" y1="270" x2="290" y2="450" stroke="#1a2e26" stroke-width="3"/>
+  </g>
+  
+  <g>
+    <rect x="400" y="190" width="260" height="290" fill="#8c8d88"/>
+    <rect x="420" y="210" width="220" height="250" fill="url(#glassGrad)"/>
+    
+    <g fill="url(#woodGrad)" stroke="#4a2717" stroke-width="1">
+      <rect x="430" y="200" width="10" height="270" rx="2"/>
+      <rect x="460" y="200" width="10" height="270" rx="2"/>
+      <rect x="490" y="200" width="10" height="270" rx="2"/>
+      <rect x="520" y="200" width="10" height="270" rx="2"/>
+      <rect x="550" y="200" width="10" height="270" rx="2"/>
+      <rect x="580" y="200" width="10" height="270" rx="2"/>
+      <rect x="610" y="200" width="10" height="270" rx="2"/>
+    </g>
+  </g>
+  
+  <rect x="160" y="170" width="520" height="25" fill="#3d5a45" rx="3"/>
+  <path d="M165,170 Q180,150 200,170 Q220,152 240,170 Q270,148 300,170 Q350,150 400,170 Q450,148 500,170 Q550,152 600,170 Q640,150 675,170 Z" fill="#2d7348"/>
+  
+  <g>
+    <path d="M110,480 Q100,380 90,260 Q120,300 130,240" stroke="#483325" stroke-width="12" fill="none" stroke-linecap="round"/>
+    <circle cx="90" cy="240" r="60" fill="#275939" opacity="0.9"/>
+    <circle cx="130" cy="220" r="50" fill="#3a7a51" opacity="0.9"/>
+    <circle cx="100" cy="190" r="45" fill="#52996a" opacity="0.85"/>
+  </g>
+  
+  <rect x="630" y="30" width="140" height="34" rx="17" fill="#112a22" opacity="0.9"/>
+  <text x="700" y="52" fill="#c8a261" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" text-anchor="middle">LEED PLATINUM</text>
+</svg>

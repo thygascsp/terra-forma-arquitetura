@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <radialGradient id="brickLight" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#cf7252" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#9d4a34" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#6e2d1d" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="mortar" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3d3532"/>
+      <stop offset="100%" stop-color="#241e1c"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="600" height="400" fill="url(#mortar)"/>
+  
+  <g fill="#9e4b33" stroke="#241e1c" stroke-width="4">
+    <!-- Linha 1 -->
+    <rect x="5" y="5" width="140" height="52" rx="2" fill="#a64f37" />
+    <rect x="155" y="5" width="140" height="52" rx="2" fill="#8d3d29" />
+    <rect x="305" y="5" width="140" height="52" rx="2" fill="#b1583f" />
+    <rect x="455" y="5" width="140" height="52" rx="2" fill="#994631" />
+    
+    <!-- Linha 2 -->
+    <rect x="-65" y="65" width="135" height="52" rx="2" fill="#93442f" />
+    <rect x="80" y="65" width="140" height="52" rx="2" fill="#b35a41" />
+    <rect x="230" y="65" width="140" height="52" rx="2" fill="#7e3623" />
+    <rect x="380" y="65" width="140" height="52" rx="2" fill="#a8523a" />
+    <rect x="530" y="65" width="135" height="52" rx="2" fill="#9c4934" />
+    
+    <!-- Linha 3 -->
+    <rect x="5" y="125" width="140" height="52" rx="2" fill="#b65d44" />
+    <rect x="155" y="125" width="140" height="52" rx="2" fill="#873b27" />
+    <rect x="305" y="125" width="140" height="52" rx="2" fill="#a14c35" />
+    <rect x="455" y="125" width="140" height="52" rx="2" fill="#8d3f2b" />
+    
+    <!-- Linha 4 -->
+    <rect x="-65" y="185" width="135" height="52" rx="2" fill="#a44e36" />
+    <rect x="80" y="185" width="140" height="52" rx="2" fill="#75301f" />
+    <rect x="230" y="185" width="140" height="52" rx="2" fill="#b86047" />
+    <rect x="380" y="185" width="140" height="52" rx="2" fill="#9b4833" />
+    <rect x="530" y="185" width="135" height="52" rx="2" fill="#a75139" />
+    
+    <!-- Linha 5 -->
+    <rect x="5" y="245" width="140" height="52" rx="2" fill="#893d29" />
+    <rect x="155" y="245" width="140" height="52" rx="2" fill="#af553c" />
+    <rect x="305" y="245" width="140" height="52" rx="2" fill="#7a3321" />
+    <rect x="455" y="245" width="140" height="52" rx="2" fill="#ab533b" />
+    
+    <!-- Linha 6 -->
+    <rect x="-65" y="305" width="135" height="52" rx="2" fill="#a24c34" />
+    <rect x="80" y="305" width="140" height="52" rx="2" fill="#8c3e2a" />
+    <rect x="230" y="305" width="140" height="52" rx="2" fill="#b55c43" />
+    <rect x="380" y="305" width="140" height="52" rx="2" fill="#74301f" />
+    <rect x="530" y="305" width="135" height="52" rx="2" fill="#9e4b33" />
+    
+    <!-- Linha 7 -->
+    <rect x="5" y="365" width="140" height="52" rx="2" fill="#ab533b" />
+    <rect x="155" y="365" width="140" height="52" rx="2" fill="#7f3724" />
+    <rect x="305" y="365" width="140" height="52" rx="2" fill="#a44e36" />
+    <rect x="455" y="365" width="140" height="52" rx="2" fill="#92432e" />
+  </g>
+  
+  <rect width="600" height="400" fill="url(#brickLight)" opacity="0.4" style="mix-blend-mode: overlay;"/>
+  
+  <radialGradient id="brickVignette" cx="50%" cy="50%" r="70%">
+    <stop offset="35%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.65"/>
+  </radialGradient>
+  <rect width="600" height="400" fill="url(#brickVignette)"/>
+</svg>

@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="warmSun" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fff6e5"/>
+      <stop offset="60%" stop-color="#ebd8b5"/>
+      <stop offset="100%" stop-color="#cbb58c"/>
+    </linearGradient>
+    <linearGradient id="modernGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9ad1be" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#4e8d7a" stop-opacity="0.65"/>
+      <stop offset="100%" stop-color="#164d3f" stop-opacity="0.95"/>
+    </linearGradient>
+  </defs>
+  
+  <rect width="800" height="600" fill="url(#warmSun)"/>
+  
+  <rect x="0" y="440" width="800" height="160" fill="#2d5239"/>
+  <polygon points="120,470 680,470 760,600 40,600" fill="#8c5837"/>
+  <line x1="60" y1="500" x2="740" y2="500" stroke="#663c22" stroke-width="2"/>
+  <line x1="50" y1="535" x2="750" y2="535" stroke="#663c22" stroke-width="2"/>
+  <line x1="40" y1="570" x2="760" y2="570" stroke="#663c22" stroke-width="2"/>
+  
+  <rect x="150" y="190" width="500" height="250" fill="#a44e36"/>
+  <polygon points="120,190 350,90 450,190 680,90 680,190" fill="#1b2923"/>
+  <rect x="470" y="105" width="190" height="75" fill="#16344d" stroke="#5d8ba6" stroke-width="2" transform="skewY(-14)"/>
+  
+  <g fill="url(#modernGlass)" stroke="#11241c" stroke-width="4">
+    <rect x="190" y="220" width="120" height="180" rx="4"/>
+    <rect x="340" y="220" width="120" height="180" rx="4"/>
+    <rect x="490" y="220" width="120" height="180" rx="4"/>
+  </g>
+  
+  <path d="M160,320 Q170,250 180,210 Q190,260 175,360 Z" fill="#276b42"/>
+  <circle cx="170" cy="240" r="22" fill="#3d8e5e"/>
+  <circle cx="640" cy="260" r="28" fill="#3d8e5e"/>
+  <path d="M635,350 Q645,280 655,230" stroke="#1f5434" stroke-width="6" fill="none"/>
+  
+  <rect x="230" y="440" width="40" height="45" fill="#9e4b33" rx="3"/>
+  <circle cx="250" cy="425" r="30" fill="#2f784c"/>
+  
+  <rect x="530" y="440" width="40" height="45" fill="#9e4b33" rx="3"/>
+  <circle cx="550" cy="425" r="30" fill="#2f784c"/>
+  
+  <rect x="40" y="40" width="240" height="40" rx="8" fill="#0d2d24" opacity="0.95"/>
+  <text x="160" y="66" fill="#c8a261" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" text-anchor="middle">DEPOIS: RETROFIT SUSTENTÁVEL</text>
+</svg>

@@ -1,0 +1,239 @@
+/* ==========================================================================
+   TERRA & FORMA Atelier de Arquitetura - Boa Vista, RR
+   Design Responsivo Mobile-First & Adaptações de Layout
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-stats-row {
+    justify-content: center;
+  }
+
+  .manifesto-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .bento-col-8, .bento-col-4, .bento-col-6 {
+    grid-column: span 12;
+  }
+
+  .projects-showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .estimator-card {
+    grid-template-columns: 1fr;
+  }
+
+  .estimator-results-col {
+    border-left: none;
+    border-top: 1px solid rgba(200, 162, 97, 0.2);
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+
+  .palm-tree-cluster {
+    width: 320px;
+    right: -70px;
+    opacity: 0.75;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .site-header .container {
+    height: 72px;
+  }
+
+  .nav-desktop {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 82%;
+    max-width: 340px;
+    height: 100vh;
+    background: #0d251e;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5rem 2rem 2rem;
+    gap: 1.5rem;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.6);
+    transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1001;
+  }
+
+  .nav-desktop.active {
+    right: 0;
+  }
+
+  .nav-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-backdrop.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-toggle {
+    display: flex;
+    z-index: 1002;
+  }
+
+  .nav-toggle.open span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+  .top-bar {
+    display: none;
+  }
+
+  .hero-section {
+    padding: 2.5rem 0 4rem;
+  }
+
+  .hero-title {
+    font-size: 2.1rem;
+    line-height: 1.2;
+  }
+
+  .hero-stats-row {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+    text-align: center;
+  }
+
+  #threejs-canvas-container {
+    height: 360px;
+  }
+
+  .controls-3d-bar {
+    width: 96%;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 16px;
+    padding: 0.35rem;
+  }
+
+  .btn-3d-ctrl {
+    padding: 0.32rem 0.55rem;
+    font-size: 0.7rem;
+  }
+
+  .projects-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-thumb {
+    height: 240px;
+  }
+
+  .ba-slider-container {
+    height: 320px;
+  }
+
+  .before-after-box {
+    padding: 1.6rem 1.2rem;
+  }
+
+  .estimator-form-col {
+    padding: 2rem 1.4rem;
+  }
+
+  .estimator-results-col {
+    padding: 2.2rem 1.4rem;
+  }
+
+  .checkboxes-est-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .results-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  /* Palmeira no mobile: empurrada para fora, sem NUNCA cobrir textos! */
+  .palm-tree-cluster {
+    width: 200px;
+    right: -80px;
+    top: -20px;
+    opacity: 0.40; /* Bem suave como marca d'água no mobile */
+    z-index: 1;
+  }
+
+  /* Botão vertical no mobile */
+  .vertical-whatsapp-dock {
+    padding: 0.75rem 0.45rem;
+    border-radius: 14px 0 0 14px;
+    top: 60%;
+  }
+
+  .vert-wa-icon-box {
+    width: 36px;
+    height: 36px;
+  }
+
+  .vert-wa-icon-box svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .vert-wa-text {
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    padding: 0.25rem 0;
+  }
+
+  .vert-wa-status-badge {
+    font-size: 0.55rem;
+  }
+}

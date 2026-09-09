@@ -1,0 +1,1657 @@
+/* ==========================================================================
+   TERRA & FORMA Atelier de Arquitetura Bioclimática & Sustentável
+   Estilos Principais & Identidade Visual Autoral
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Cores Principais da Arquitetura Sustentável */
+  --color-forest-deep: #0b251e;
+  --color-forest-mid: #14382e;
+  --color-forest-light: #235446;
+  --color-sage: #58876e;
+  --color-sage-soft: #8dafa0;
+
+  /* Terracota & Tijolo Aparente */
+  --color-brick-dark: #6e2e1e;
+  --color-brick-main: #9e4a33;
+  --color-brick-warm: #bc5e44;
+  --color-brick-light: #d67a60;
+
+  /* Acentos de Luxo & Autoridade */
+  --color-gold-accent: #c8a261;
+  --color-gold-hover: #dfba79;
+  --color-gold-glow: rgba(200, 162, 97, 0.28);
+
+  /* Fundos & Superfícies */
+  --color-linen-light: #faf8f5;
+  --color-linen-muted: #f0ece1;
+  --color-card-dark: #12211c;
+  --color-charcoal: #151817;
+  --color-text-dark: #1f2723;
+  --color-text-muted: #5e6b65;
+  --color-text-light: #f5f4ef;
+
+  /* Bordas e Sombras */
+  --border-gold-subtle: rgba(200, 162, 97, 0.2);
+  --border-white-subtle: rgba(255, 255, 255, 0.12);
+  --shadow-luxury: 0 20px 45px -15px rgba(11, 37, 30, 0.25);
+  --shadow-elevated: 0 25px 60px -15px rgba(0, 0, 0, 0.45);
+
+  /* Tipografia */
+  --font-display: 'Cinzel', serif;
+  --font-editorial: 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Transições */
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+/* Reset Global */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-linen-light);
+  color: var(--color-text-dark);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Tipografia Base */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--color-forest-deep);
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+}
+
+p {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Classes Utilitárias */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.text-gold {
+  color: var(--color-gold-accent) !important;
+}
+
+.font-editorial {
+  font-family: var(--font-editorial);
+  font-style: italic;
+  font-weight: 500;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 1rem;
+  background: rgba(200, 162, 97, 0.12);
+  border: 1px solid var(--border-gold-subtle);
+  border-radius: 999px;
+  color: var(--color-gold-accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.section-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-gold-accent);
+  box-shadow: 0 0 8px var(--color-gold-accent);
+}
+
+/* ==========================================================================
+   TOP BAR ARQUITETÔNICA & HEADER
+   ========================================================================== */
+.top-bar {
+  background-color: var(--color-charcoal);
+  color: rgba(245, 244, 239, 0.85);
+  font-size: 0.82rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.top-bar-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.top-bar-info span {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.top-bar-badge {
+  color: var(--color-gold-accent);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Header Principal */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(11, 37, 30, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(200, 162, 97, 0.15);
+  transition: var(--transition-smooth);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 84px;
+}
+
+.site-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.brand-monogram {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid var(--color-gold-accent);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold-accent);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  background: radial-gradient(circle at 50% 50%, rgba(200, 162, 97, 0.18), transparent);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+}
+
+.brand-tagline {
+  color: var(--color-gold-accent);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Navegação Desktop */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.92rem;
+  font-weight: 500;
+  position: relative;
+  padding: 0.4rem 0;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-gold-accent);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Botões do Sistema */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-align: center;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #c8a261 0%, #a9803d 100%);
+  color: #0b251e;
+  box-shadow: 0 8px 20px rgba(200, 162, 97, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(200, 162, 97, 0.45);
+  filter: brightness(1.05);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border: 1px solid var(--border-gold-subtle);
+  backdrop-filter: blur(8px);
+}
+
+.btn-secondary:hover {
+  background: rgba(200, 162, 97, 0.15);
+  border-color: var(--color-gold-accent);
+  color: var(--color-gold-accent);
+  transform: translateY(-2px);
+}
+
+.btn-brick {
+  background: linear-gradient(135deg, var(--color-brick-main) 0%, var(--color-brick-dark) 100%);
+  color: #fff;
+  box-shadow: 0 8px 20px rgba(158, 74, 51, 0.35);
+}
+
+.btn-brick:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(158, 74, 51, 0.5);
+  filter: brightness(1.1);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.nav-toggle span {
+  width: 26px;
+  height: 2px;
+  background-color: var(--color-gold-accent);
+  transition: var(--transition-fast);
+}
+
+/* ==========================================================================
+   HERO SECTION COM 3D & PARALLAX BOTÂNICO
+   ========================================================================== */
+.hero-section {
+  position: relative;
+  background: linear-gradient(160deg, #0b251e 0%, #11362b 50%, #1b4538 100%);
+  color: #fff;
+  padding: 4rem 0 6rem;
+  overflow: hidden;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Textura de Tijolo com Overlay no Fundo do Hero */
+.hero-brick-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/brick-wall-pattern.svg');
+  background-size: 550px 370px;
+  background-repeat: repeat;
+  opacity: 0.12;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* Vinheta de luz central */
+.hero-glow {
+  position: absolute;
+  top: 20%;
+  right: 15%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200, 162, 97, 0.18) 0%, rgba(35, 84, 70, 0.12) 50%, transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 3.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-content {
+  max-width: 580px;
+}
+
+.hero-title {
+  font-size: 3.1rem;
+  color: #fff;
+  line-height: 1.18;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.hero-title .highlight {
+  background: linear-gradient(135deg, #c8a261 0%, #ffd98f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: rgba(245, 244, 239, 0.85);
+  margin-bottom: 2.2rem;
+  line-height: 1.7;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.hero-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero-stat-item h3 {
+  color: var(--color-gold-accent);
+  font-size: 1.85rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.hero-stat-item p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+/* Container do Three.js */
+.hero-3d-wrapper {
+  position: relative;
+  background: radial-gradient(circle at center, rgba(35, 84, 70, 0.4) 0%, rgba(11, 37, 30, 0.8) 80%);
+  border: 1px solid var(--border-gold-subtle);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-elevated);
+}
+
+#threejs-canvas-container {
+  width: 100%;
+  height: 520px;
+  cursor: grab;
+}
+
+#threejs-canvas-container:active {
+  cursor: grabbing;
+}
+
+/* Barra de Controles da Maquete 3D */
+.controls-3d-bar {
+  position: absolute;
+  bottom: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(18, 33, 28, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(200, 162, 97, 0.25);
+  border-radius: 999px;
+  padding: 0.4rem 0.6rem;
+  z-index: 20;
+}
+
+.btn-3d-ctrl {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 0.45rem 0.95rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.btn-3d-ctrl:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-3d-ctrl.active {
+  background: var(--color-gold-accent);
+  color: var(--color-forest-deep);
+}
+
+.hint-3d-touch {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: rgba(18, 33, 28, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  color: var(--color-gold-accent);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   TICKER DE CERTIFICAÇÕES & MATERIAIS
+   ========================================================================== */
+.ticker-section {
+  background-color: #081a15;
+  border-bottom: 1px solid rgba(200, 162, 97, 0.15);
+  padding: 1.2rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: inline-flex;
+  gap: 3rem;
+  animation: tickerSlide 28s linear infinite;
+}
+
+.ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: rgba(245, 244, 239, 0.75);
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.ticker-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-gold-accent);
+}
+
+@keyframes tickerSlide {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   SEÇÃO MANIFESTO & TIJOLO APARENTE (ALMA DO ATELIER)
+   ========================================================================== */
+.manifesto-section {
+  position: relative;
+  padding: 7rem 0;
+  background: var(--color-linen-light);
+  overflow: hidden;
+}
+
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.manifesto-brick-card {
+  position: relative;
+  z-index: 10;
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 3rem;
+  box-shadow: var(--shadow-luxury);
+  border: 1px solid rgba(158, 74, 51, 0.15);
+}
+
+/* Textura sutil de tijolo na borda decorativa */
+.brick-decorative-accent {
+  width: 60px;
+  height: 6px;
+  background: linear-gradient(90deg, var(--color-brick-main), var(--color-gold-accent));
+  border-radius: 3px;
+  margin-bottom: 1.8rem;
+}
+
+.manifesto-quote {
+  font-family: var(--font-editorial);
+  font-size: 1.85rem;
+  color: var(--color-forest-deep);
+  line-height: 1.45;
+  margin-bottom: 1.8rem;
+}
+
+.manifesto-author {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.author-avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--color-forest-deep);
+  color: var(--color-gold-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border: 2px solid var(--color-gold-accent);
+}
+
+.author-info h4 {
+  font-size: 1.05rem;
+  margin-bottom: 0.15rem;
+}
+
+.author-info p {
+  font-size: 0.82rem;
+}
+
+/* Seletor Interativo de Materiais Sustentáveis */
+.materials-interactive-box {
+  background: var(--color-card-dark);
+  color: #fff;
+  border-radius: 20px;
+  padding: 2.5rem;
+  border: 1px solid var(--border-gold-subtle);
+  box-shadow: var(--shadow-elevated);
+}
+
+.materials-interactive-box h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.materials-interactive-box p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.92rem;
+  margin-bottom: 1.8rem;
+}
+
+.material-buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.mat-selector-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.mat-selector-btn:hover {
+  background: rgba(200, 162, 97, 0.15);
+  border-color: var(--color-gold-accent);
+}
+
+.mat-selector-btn.active {
+  background: linear-gradient(135deg, var(--color-brick-main) 0%, var(--color-brick-dark) 100%);
+  border-color: var(--color-gold-accent);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(158, 74, 51, 0.4);
+}
+
+.material-detail-card {
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(200, 162, 97, 0.2);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.material-detail-card h4 {
+  color: var(--color-gold-accent);
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+}
+
+.material-detail-item {
+  margin-bottom: 0.7rem;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.material-detail-item strong {
+  color: #fff;
+  display: block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.15rem;
+}
+
+/* ==========================================================================
+   BENTO GRID DE SOLUÇÕES & ÁREAS BIOCLIMÁTICAS
+   ========================================================================== */
+.solutions-section {
+  padding: 7rem 0;
+  background-color: #f3efe6;
+  position: relative;
+}
+
+.section-header-center {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4rem;
+}
+
+.section-title {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+}
+
+.bento-grid-architectural {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 1.8rem;
+}
+
+.bento-item {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: var(--shadow-luxury);
+  transition: var(--transition-smooth);
+  position: relative;
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bento-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px -15px rgba(11, 37, 30, 0.18);
+  border-color: rgba(200, 162, 97, 0.4);
+}
+
+.bento-col-8 { grid-column: span 8; }
+.bento-col-4 { grid-column: span 4; }
+.bento-col-6 { grid-column: span 6; }
+
+.bento-icon-box {
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: rgba(35, 84, 70, 0.1);
+  color: var(--color-forest-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+}
+
+.bento-icon-box svg {
+  width: 28px;
+  height: 28px;
+}
+
+.bento-number {
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.04);
+  position: absolute;
+  top: 1.5rem;
+  right: 1.8rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.bento-item h3 {
+  font-size: 1.45rem;
+  margin-bottom: 0.8rem;
+}
+
+.bento-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.bento-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+.bento-tag {
+  background: var(--color-linen-light);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 0.25rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-forest-deep);
+}
+
+/* ==========================================================================
+   MOSTRA DE PROJETOS & SLIDER ANTES E DEPOIS
+   ========================================================================== */
+.projects-section {
+  padding: 7rem 0;
+  background: linear-gradient(180deg, #12211c 0%, #0b1a15 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-section .section-title {
+  color: #fff;
+}
+
+.projects-section .section-subtitle {
+  color: rgba(245, 244, 239, 0.75);
+}
+
+.project-filters {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+.project-filter-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.project-filter-btn:hover,
+.project-filter-btn.active {
+  background: var(--color-gold-accent);
+  color: var(--color-forest-deep);
+  border-color: var(--color-gold-accent);
+}
+
+.projects-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+/* Card com Tilt 3D */
+.project-card {
+  background: #182c25;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(200, 162, 97, 0.18);
+  box-shadow: var(--shadow-elevated);
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.tilt-glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  border-radius: 18px;
+}
+
+.project-thumb {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  background-color: #243d34;
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-thumb img {
+  transform: scale(1.08);
+}
+
+.project-badge-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(11, 37, 30, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-gold-subtle);
+  color: var(--color-gold-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.project-info {
+  padding: 1.8rem;
+}
+
+.project-category {
+  color: var(--color-sage-soft);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.project-title {
+  color: #fff;
+  font-size: 1.35rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+.project-excerpt {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+
+.project-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-view-project {
+  color: var(--color-gold-accent);
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.btn-view-project:hover {
+  color: #fff;
+  transform: translateX(3px);
+}
+
+/* ==========================================================================
+   SLIDER INTERATIVO ANTES & DEPOIS (RETROFIT)
+   ========================================================================== */
+.before-after-box {
+  background: #182c25;
+  border: 1px solid var(--border-gold-subtle);
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: var(--shadow-elevated);
+}
+
+.before-after-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.before-after-header h3 {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.before-after-header p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
+}
+
+.ba-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-luxury);
+  user-select: none;
+  cursor: ew-resize;
+}
+
+.ba-image-before,
+.ba-image-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ba-image-before img,
+.ba-image-after img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.ba-image-after {
+  clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+}
+
+.ba-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: var(--color-gold-accent);
+  transform: translateX(-50%);
+  cursor: ew-resize;
+  z-index: 20;
+}
+
+.ba-handle-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-gold-accent);
+  color: var(--color-forest-deep);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.ba-label-before,
+.ba-label-after {
+  position: absolute;
+  bottom: 1.5rem;
+  background: rgba(11, 37, 30, 0.85);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.ba-label-before {
+  left: 1.5rem;
+  border: 1px solid rgba(230, 126, 34, 0.4);
+  color: #e67e22;
+}
+
+.ba-label-after {
+  right: 1.5rem;
+  border: 1px solid var(--border-gold-subtle);
+  color: var(--color-gold-accent);
+}
+
+/* ==========================================================================
+   SIMULADOR / ESTIMADOR DE PROJETO BIOCLIMÁTICO
+   ========================================================================== */
+.estimator-section {
+  padding: 7rem 0;
+  background-color: var(--color-linen-light);
+  position: relative;
+}
+
+.estimator-card {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: var(--shadow-luxury);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.estimator-form-col {
+  padding: 3.5rem;
+}
+
+.estimator-form-col h3 {
+  font-size: 1.85rem;
+  margin-bottom: 0.6rem;
+}
+
+.estimator-form-col p {
+  font-size: 0.95rem;
+  margin-bottom: 2rem;
+}
+
+.form-group-est {
+  margin-bottom: 1.8rem;
+}
+
+.form-group-est label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--color-forest-deep);
+  margin-bottom: 0.6rem;
+}
+
+.select-est {
+  width: 100%;
+  padding: 0.85rem 1.2rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  background-color: #fff;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.select-est:focus {
+  outline: none;
+  border-color: var(--color-forest-deep);
+  box-shadow: 0 0 0 3px rgba(35, 84, 70, 0.12);
+}
+
+.range-est-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.range-est {
+  flex: 1;
+  accent-color: var(--color-forest-deep);
+  cursor: pointer;
+}
+
+.range-display-badge {
+  background: var(--color-forest-deep);
+  color: var(--color-gold-accent);
+  font-weight: 700;
+  padding: 0.4rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  min-width: 90px;
+  text-align: center;
+}
+
+.checkboxes-est-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.8rem;
+}
+
+.est-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--color-linen-light);
+  transition: var(--transition-fast);
+}
+
+.est-checkbox-label:hover {
+  background: #fff;
+  border-color: var(--color-forest-mid);
+}
+
+.est-checkbox-label input {
+  accent-color: var(--color-forest-deep);
+  width: 17px;
+  height: 17px;
+}
+
+/* Coluna de Resultados / Score */
+.estimator-results-col {
+  background: linear-gradient(150deg, #112a22 0%, #081a15 100%);
+  color: #fff;
+  padding: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-left: 1px solid rgba(200, 162, 97, 0.2);
+}
+
+.results-col-header h4 {
+  color: var(--color-gold-accent);
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.results-col-header p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+}
+
+.results-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin: 2.2rem 0;
+}
+
+.res-metric-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.2rem;
+  border-radius: 12px;
+}
+
+.res-metric-item span {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+
+.res-metric-item h5 {
+  font-size: 1.8rem;
+  color: var(--color-gold-accent);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.cert-banner {
+  background: rgba(200, 162, 97, 0.15);
+  border: 1px solid var(--border-gold-subtle);
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.cert-banner strong {
+  color: #fff;
+  font-size: 0.88rem;
+}
+
+.cert-banner span {
+  color: var(--color-gold-accent);
+  font-weight: 700;
+  font-size: 0.88rem;
+}
+
+.results-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* ==========================================================================
+   PERGUNTAS FREQUENTES (FAQ)
+   ========================================================================== */
+.faq-section {
+  padding: 7rem 0;
+  background-color: #f3efe6;
+}
+
+.faq-wrapper {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 14px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1.5rem 1.8rem;
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-forest-deep);
+  cursor: pointer;
+  text-align: left;
+}
+
+.faq-toggle-icon {
+  width: 34px;
+  height: 34px;
+  min-width: 34px;
+  border-radius: 50%;
+  background: var(--color-forest-deep);
+  color: var(--color-gold-accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  flex-shrink: 0;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, color 0.25s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.faq-toggle-icon svg {
+  width: 16px;
+  height: 16px;
+  display: block;
+  stroke: currentColor;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  margin: 0;
+  padding: 0;
+}
+
+.faq-item.active .faq-toggle-icon {
+  transform: rotate(45deg);
+  background: var(--color-gold-accent);
+  color: var(--color-forest-deep);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+}
+
+.faq-answer-inner {
+  padding: 0 1.8rem 1.6rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+  padding-top: 1.2rem;
+}
+
+/* ==========================================================================
+   RODAPÉ ARQUITETÔNICO COM ASSINATURA TCSP SITES
+   ========================================================================== */
+.site-footer {
+  background: #081410;
+  color: rgba(245, 244, 239, 0.8);
+  padding: 5rem 0 2rem;
+  border-top: 1px solid rgba(200, 162, 97, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-brick-pattern {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/images/brick-wall-pattern.svg');
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: 3.5rem;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 5;
+}
+
+.footer-brand h3 {
+  color: #fff;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-brand p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.footer-col h4 {
+  color: var(--color-gold-accent);
+  font-size: 1.05rem;
+  margin-bottom: 1.4rem;
+  font-family: var(--font-display);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.7rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.88rem;
+  transition: var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-gold-accent);
+  padding-left: 4px;
+}
+
+.footer-contact-info p {
+  margin-bottom: 0.8rem;
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  gap: 0.6rem;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 5;
+}
+
+.footer-copy {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Badge de Assinatura TCSP Sites */
+.tcsp-signature-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(200, 162, 97, 0.25);
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  transition: var(--transition-fast);
+}
+
+.tcsp-signature-badge:hover {
+  background: rgba(200, 162, 97, 0.15);
+  border-color: var(--color-gold-accent);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.tcsp-signature-badge strong {
+  color: var(--color-gold-accent);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+/* ==========================================================================
+   MODAIS (AGENDAMENTO & DETALHES DE PROJETOS)
+   ========================================================================== */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--transition-smooth);
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background: #fff;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 20px;
+  padding: 2.8rem;
+  position: relative;
+  box-shadow: var(--shadow-elevated);
+  transform: scale(0.95);
+  transition: var(--transition-smooth);
+}
+
+.modal-backdrop.active .modal-card {
+  transform: scale(1);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--color-linen-light);
+  border: none;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-forest-deep);
+  transition: var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: var(--color-forest-deep);
+  color: #fff;
+}
+
+.modal-header {
+  margin-bottom: 2rem;
+}
+
+.modal-header h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-header p {
+  font-size: 0.95rem;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.form-control-modal {
+  width: 100%;
+  padding: 0.85rem 1.1rem;
+  border: 1.5px solid rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  margin-bottom: 1rem;
+  transition: var(--transition-fast);
+}
+
+.form-control-modal:focus {
+  outline: none;
+  border-color: var(--color-forest-deep);
+  box-shadow: 0 0 0 3px rgba(35, 84, 70, 0.12);
+}
+
+textarea.form-control-modal {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.modal-success-box {
+  display: none;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.modal-success-box h4 {
+  font-size: 1.6rem;
+  color: var(--color-forest-deep);
+  margin-bottom: 0.8rem;
+}

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="warmSunset" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ebd5b8"/>
+      <stop offset="50%" stop-color="#d6b896"/>
+      <stop offset="100%" stop-color="#b8936f"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#warmSunset)"/>
+  
+  <!-- Terreno e Pátio com Tijolo Ecológico -->
+  <rect x="0" y="420" width="800" height="180" fill="#7a3f2d"/>
+  <polygon points="100,450 700,450 780,600 20,600" fill="#a45239"/>
+  
+  <!-- Estrutura de Madeira Laminada e Vidro -->
+  <polygon points="150,420 400,160 650,420" fill="none" stroke="#482717" stroke-width="14"/>
+  <polygon points="170,420 400,185 630,420" fill="#1e3e36" opacity="0.85"/>
+  
+  <!-- Pilares e Vigas de Madeira -->
+  <line x1="280" y1="420" x2="400" y2="185" stroke="#783c1e" stroke-width="8"/>
+  <line x1="520" y1="420" x2="400" y2="185" stroke="#783c1e" stroke-width="8"/>
+  
+  <!-- Muro de Tijolo de Solo-Cimento ao fundo -->
+  <rect x="220" y="320" width="360" height="100" fill="#914732"/>
+  <line x1="220" y1="350" x2="580" y2="350" stroke="#3d1b11" stroke-width="2"/>
+  <line x1="220" y1="380" x2="580" y2="380" stroke="#3d1b11" stroke-width="2"/>
+  
+  <!-- Jardim de Inverno Interno Iluminado -->
+  <circle cx="400" cy="360" r="35" fill="#3c8257" opacity="0.9"/>
+  <circle cx="430" cy="370" r="25" fill="#589e73" opacity="0.9"/>
+  <circle cx="370" cy="375" r="28" fill="#255e3c" opacity="0.9"/>
+  
+  <!-- Luz Quente de Destaque -->
+  <circle cx="400" cy="270" r="16" fill="#fcd34d" opacity="0.85"/>
+  <circle cx="400" cy="270" r="60" fill="#fcd34d" opacity="0.15"/>
+  
+  <rect x="630" y="30" width="140" height="34" rx="17" fill="#112a22" opacity="0.9"/>
+  <text x="700" y="52" fill="#c8a261" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" text-anchor="middle">AQUA-HQE OURO</text>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 240" width="1200" height="240">
+  <defs>
+    <linearGradient id="ivyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#559e72"/>
+      <stop offset="60%" stop-color="#235f3e"/>
+      <stop offset="100%" stop-color="#0f3723"/>
+    </linearGradient>
+    <filter id="ivyShadow">
+      <feDropShadow dx="0" dy="12" stdDeviation="14" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <g filter="url(#ivyShadow)">
+    <path d="M0,0 Q200,60 400,20 T800,45 T1200,15" fill="none" stroke="#234a34" stroke-width="5"/>
+    <path d="M100,0 Q180,100 260,150 Q280,180 290,210" fill="none" stroke="#1f442e" stroke-width="3"/>
+    <path d="M480,0 Q510,80 550,140 Q560,180 570,200" fill="none" stroke="#1f442e" stroke-width="3"/>
+    <path d="M880,0 Q910,90 940,160 Q950,200 960,220" fill="none" stroke="#1f442e" stroke-width="3.5"/>
+    
+    <g fill="url(#ivyGrad)">
+      <path d="M290,210 C270,225 275,250 295,245 C315,250 320,225 290,210 Z"/>
+      <path d="M270,160 C250,170 255,190 275,185 C290,190 295,170 270,160 Z"/>
+      <path d="M220,110 C200,120 205,140 225,135 C240,140 245,120 220,110 Z"/>
+      <path d="M170,60 C150,70 155,90 175,85 C190,90 195,70 170,60 Z"/>
+      
+      <path d="M570,200 C550,215 555,240 575,235 C595,240 600,215 570,200 Z"/>
+      <path d="M540,130 C520,140 525,160 545,155 C560,160 565,140 540,130 Z"/>
+      <path d="M500,70 C480,80 485,100 505,95 C520,100 525,80 500,70 Z"/>
+      
+      <path d="M960,220 C940,235 945,260 965,255 C985,260 990,235 960,220 Z"/>
+      <path d="M930,150 C910,160 915,180 935,175 C950,180 955,160 930,150 Z"/>
+      <path d="M900,80 C880,90 885,110 905,105 C920,110 925,90 900,80 Z"/>
+      
+      <path d="M120,20 C100,30 105,50 125,45 C140,50 145,30 120,20 Z"/>
+      <path d="M360,30 C340,40 345,60 365,55 C380,60 385,40 360,30 Z"/>
+      <path d="M720,35 C700,45 705,65 725,60 C740,65 745,45 720,35 Z"/>
+      <path d="M1100,25 C1080,35 1085,55 1105,50 C1120,55 1125,35 1100,25 Z"/>
+    </g>
+  </g>
+</svg>
