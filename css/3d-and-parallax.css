@@ -20,10 +20,8 @@
 .tree-branch {
   position: absolute;
   pointer-events: none;
-  transform-origin: 0% 50%; /* Articulação na base do galho fora da tela */
+  transform-origin: 0% 50%;
   will-change: transform;
-  filter: drop-shadow(14px 20px 28px rgba(0, 0, 0, 0.42));
-  transition: opacity 0.3s ease;
 }
 
 .tree-branch img {

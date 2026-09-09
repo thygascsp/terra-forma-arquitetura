@@ -517,9 +517,22 @@
     });
   }
 
+  // Otimização de performance: pausa Three.js quando fora do viewport
+  let isCanvasVisible = true;
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        isCanvasVisible = entry.isIntersecting;
+      });
+    }, { threshold: 0.05 });
+    observer.observe(container);
+  }
+
   const clock = new THREE.Clock();
   function animate() {
     requestAnimationFrame(animate);
+    if (!isCanvasVisible) return; // Pausa se a maquete estiver fora da visão do usuário
+
     const elapsedTime = clock.getElapsedTime();
 
     if (autoRotate) targetRotY += 0.003;
