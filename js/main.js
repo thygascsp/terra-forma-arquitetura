@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       setTimeout(() => {
-        window.open(`https://wa.me/5595991234567?text=${whatsappMsg}`, '_blank');
+        window.open(`https://wa.me/5538999224576?text=${whatsappMsg}`, '_blank');
       }, 1000);
     });
   }

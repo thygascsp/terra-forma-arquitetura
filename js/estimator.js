@@ -83,7 +83,7 @@
     if (outCertification) outCertification.textContent = certLabel;
 
     if (btnWhatsapp) {
-      const phone = '5595991234567'; // Número de Boa Vista, Roraima
+      const phone = '5538999224576'; // WhatsApp TCSP Sites
       const message = `Olá, Atelier TERRA & FORMA (Boa Vista, RR)!%0A%0A` +
         `Fiz uma estimativa no site para meu projeto em Roraima:%0A` +
         `• *Tipologia:* ${typeName}%0A` +
